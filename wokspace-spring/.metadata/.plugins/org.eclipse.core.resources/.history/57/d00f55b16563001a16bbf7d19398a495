@@ -1,0 +1,20 @@
+package com.psl.tx;
+
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
+public class MyClass1 extends JdbcDaoSupport implements MyInterface{
+
+	static int id = 0;
+	@Override
+	public void method1() {
+		// TODO Auto-generated method stub
+		String sql = "insert into table1(id,name) values(?,?)";
+	}
+
+	@Override
+	public void method2() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

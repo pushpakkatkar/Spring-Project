@@ -1,0 +1,5 @@
+package com.psl.emp.dao;
+
+public class EmployeeDaoImpl {
+
+}

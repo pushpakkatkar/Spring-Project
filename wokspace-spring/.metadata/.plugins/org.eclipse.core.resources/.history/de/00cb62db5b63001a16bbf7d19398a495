@@ -1,0 +1,7 @@
+package com.psl.tx.dao;
+
+public interface StudentDao {
+
+	public void setDataSource(DataSource ds);
+	public List<StudentMarks> listStudent();
+}

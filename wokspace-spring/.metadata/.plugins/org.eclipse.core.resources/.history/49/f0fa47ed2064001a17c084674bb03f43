@@ -1,0 +1,23 @@
+package com.psl.emp.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.psl.emp.service.EmployeeService;
+
+@Controller
+public class EmployeeController {
+	
+@Autowired
+EmployeeService service;
+
+
+@RequestMapping("getAllEmps")
+public ModelAndView getAllEmployees()
+{
+	HashMap<Integer,Employee>empMap = service.getAllEmployees();
+	return new ModelAndView("showAllEmp","emps",empMap);
+}
+}

@@ -1,0 +1,5 @@
+package com.psl.emp.bean;
+
+public class EmployeeMapper {
+
+}

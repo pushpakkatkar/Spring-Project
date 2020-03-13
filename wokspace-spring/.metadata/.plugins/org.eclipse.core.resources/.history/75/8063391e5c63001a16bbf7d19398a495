@@ -1,0 +1,8 @@
+package com.psl.tx.dao;
+
+import javax.sql.DataSource;
+
+public class StudentJDBCTemplate {
+
+	private DataSource dataSource;
+}

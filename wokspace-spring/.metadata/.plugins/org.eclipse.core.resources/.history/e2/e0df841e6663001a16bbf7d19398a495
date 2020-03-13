@@ -1,0 +1,27 @@
+package com.psl.tx;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
+public class MyClass1 extends JdbcDaoSupport implements MyInterface{
+
+	static int id = 0;
+	@Override
+	public void method1() {
+		// TODO Auto-generated method stub
+		String sql = "insert into table1(id,name) values(?,?)";
+		this.getJdbcTemplate().update(sql,new Object[]{++id,"name"});
+		System.out.println("record added with id = "+id);
+		
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("config.xml");
+		MyInterface ref = (MyInterface)ctx.getBean("");
+	}
+
+	@Override
+	public void method2() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

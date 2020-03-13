@@ -1,0 +1,46 @@
+package com.psl.shop.controller;
+
+import java.util.HashMap;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.psl.shop.bean.UserDetails;
+import com.psl.shop.service.ShoppingService;
+@Controller
+public class ShoppingController {
+
+	@Autowired
+	ShoppingService service;
+	
+	@RequestMapping("index")
+	public String goToLoginPage(Model model)
+	{
+		UserDetails user = new UserDetails();
+		model.addAttribute("newUser",user);
+		return "login";
+	}
+	
+	@RequestMapping("itemDetails")
+	public String validateUser(@ModelAttribute("newUser") @Valid UserDetails user,BindingResult result,Model model)
+	{
+		if(result.hasErrors())
+		{
+			return "login";
+		}
+		else{
+			if(service.isValidUser(user))
+			{
+				return "showCart";
+			}
+			else
+				return "login";
+		}	
+	}
+}

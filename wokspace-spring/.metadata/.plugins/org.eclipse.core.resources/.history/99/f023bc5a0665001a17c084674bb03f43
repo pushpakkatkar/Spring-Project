@@ -1,0 +1,12 @@
+package com.psl.shop.service;
+
+import java.util.HashMap;
+import java.util.List;
+
+import com.psl.shop.bean.ShoppingDetails;
+
+public interface ShoppingService {
+	public HashMap<String,String> getUserDetails();
+	public List<ShoppingDetails> getShoppingDetails();
+	public HashMap<String,List<ShoppingDetails>> getCartDetails();
+}

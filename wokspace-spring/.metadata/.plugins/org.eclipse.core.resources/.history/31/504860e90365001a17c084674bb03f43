@@ -1,0 +1,30 @@
+package com.psl.shop.controller;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.psl.emp.bean.Employee;
+import com.psl.shop.service.ShoppingService;
+
+public class ShoppingController {
+
+	@Autowired
+	ShoppingService service;
+	
+	@RequestMapping("index")
+	public String goToLoginPage()
+	{
+		return "login";
+	}
+	
+	@RequestMapping("login")
+	public String validateUser(@ModelAttribute("newUser")@Valid Employee emp,BindingResult result,Model model)
+	{
+		UserDetails 
+	}
+}

@@ -1,0 +1,28 @@
+package com.psl.shop.dao;
+
+import java.util.HashMap;
+import java.util.List;
+
+import com.psl.shop.bean.ShoppingDetails;
+
+public class ShoppingDaoImpl implements ShoppingDao{
+
+	@Override
+	public HashMap<String, String> getUserDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ShoppingDetails> getShoppingDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap<String, List<ShoppingDetails>> getCartDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

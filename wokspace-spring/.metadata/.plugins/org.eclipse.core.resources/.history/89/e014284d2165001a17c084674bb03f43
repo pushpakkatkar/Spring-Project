@@ -1,0 +1,36 @@
+package com.psl.shop.service;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.psl.shop.bean.ShoppingDetails;
+import com.psl.shop.bean.UserDetails;
+import com.psl.shop.dao.ShoppingDao;
+
+@Service("service")
+public class ShoppingServiceImpl implements ShoppingService{
+
+	@Autowired
+	ShoppingDao dao;
+	@Override
+	public Boolean isValidUser(UserDetails user) {
+		// TODO Auto-generated method stub
+		return dao.isValidUser(user);
+	}
+
+	@Override
+	public List<ShoppingDetails> getShoppingDetails() {
+		// TODO Auto-generated method stub
+		return dao.getShoppingDetails();
+	}
+
+	@Override
+	public HashMap<String, List<ShoppingDetails>> getCartDetails() {
+		// TODO Auto-generated method stub
+		return dao.getCartDetails();
+	}
+
+}

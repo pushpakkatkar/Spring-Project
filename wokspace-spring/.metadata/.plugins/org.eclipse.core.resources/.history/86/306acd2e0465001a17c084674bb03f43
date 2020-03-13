@@ -1,0 +1,36 @@
+package com.psl.shop.controller;
+
+import java.util.HashMap;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.psl.emp.bean.Employee;
+import com.psl.shop.bean.UserDetails;
+import com.psl.shop.service.ShoppingService;
+
+public class ShoppingController {
+
+	@Autowired
+	ShoppingService service;
+	
+	@RequestMapping("index")
+	public String goToLoginPage(Model model)
+	{
+		UserDetails user = new UserDetails();
+		model.addAttribute("newUser",user);
+		return "login";
+	}
+	
+	@RequestMapping("login")
+	public String validateUser(@ModelAttribute("newUser")@Valid UserDetails user,BindingResult result,Model model)
+	{
+		HashMap<String,  String> userMap = service.getUserDetails();
+		
+	}
+}

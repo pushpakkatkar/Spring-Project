@@ -1,0 +1,48 @@
+package com.psl.emp.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.psl.emp.bean.Employee;
+import com.psl.emp.service.EmployeeService;
+
+@Controller
+public class EmployeeController {
+	
+	@Autowired
+	EmployeeService service;
+	
+	@RequestMapping("index")
+	public String goToHomePage(Model model)
+	{
+		Employee emp = new Employee();
+		model.addAttribute("newEmp",emp);
+		return "home";
+	}
+	
+	@RequestMapping("addEmployee")
+	public String goToAddEmployee()
+	{
+		
+		return "addEmp";
+	}
+	
+	@RequestMapping("addEmp")
+	public String addEmployee(@ModelAttribute("newEmp")Employee emp,Model model)
+	{
+		emp = service.addEmployee(emp);
+		model.addAttribute("addedEmp",emp);
+		return "addEmp";
+	}
+	@RequestMapping("showAllEmps")
+	public String showAllEmployees(Model model)
+	{
+		List<Employee> list = service.getAllEmployees();
+		model.addAttribute("empList",list);
+		return "addEmp";
+	}
+	
+}

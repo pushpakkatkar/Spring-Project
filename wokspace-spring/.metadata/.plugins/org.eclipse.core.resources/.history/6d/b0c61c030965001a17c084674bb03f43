@@ -1,0 +1,66 @@
+package com.psl.shop.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.transaction.PlatformTransactionManager;
+
+import com.psl.emp.bean.Employee;
+import com.psl.shop.bean.ShoppingDetails;
+import com.psl.shop.bean.UserDetails;
+
+public class ShoppingDaoImpl implements ShoppingDao{
+
+	
+	private DataSource dataSource;
+	private JdbcTemplate jdbcTemplateObject;
+	
+	
+	
+	public DataSource getDataSource() {
+		return dataSource;
+	}
+
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
+	}
+
+	public JdbcTemplate getJdbcTemplateObject() {
+		return jdbcTemplateObject;
+	}
+
+	public void setJdbcTemplateObject(JdbcTemplate jdbcTemplateObject) {
+		this.jdbcTemplateObject = jdbcTemplateObject;
+	}
+
+	
+	@Override
+	public HashMap<String, String> getUserDetails(UserDetails user) {
+		// TODO Auto-generated method stub
+		HashMap<String, String> userMap = new HashMap<String, String>();
+
+		String sql = "select * from userDetailsShopping";
+		
+		return null;
+	}
+
+	@Override
+	public List<ShoppingDetails> getShoppingDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap<String, List<ShoppingDetails>> getCartDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

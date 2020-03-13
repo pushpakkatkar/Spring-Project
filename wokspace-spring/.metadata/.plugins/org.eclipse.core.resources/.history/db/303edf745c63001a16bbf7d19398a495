@@ -1,0 +1,33 @@
+package com.psl.tx.dao;
+
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.transaction.PlatformTransactionManager;
+
+import com.psl.tx.bean.StudentMarks;
+
+public class StudentJDBCTemplate implements StudentDao{
+
+	private DataSource dataSource;
+	private JdbcTemplate jdbcTemplateObject;
+	private PlatformTransactionManager transactionManager;
+	@Override
+	public void setDataSource(DataSource dataSource) {
+		// TODO Auto-generated method stub
+		this.dataSource = dataSource;
+		
+	}
+	@Override
+	public List<StudentMarks> listStudent() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void create(String name, Integer age, Integer marks, Integer year) {
+		// TODO Auto-generated method stub
+		
+	}
+}

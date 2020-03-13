@@ -1,0 +1,45 @@
+package com.psl.emp.dao;
+
+import java.util.HashMap;
+
+import com.psl.emp.bean.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao{
+
+	static HashMap< Integer, Employee> empMap = new Hashmap<Integer,Employee>;
+	
+	static{
+		Employee emp1 = new Employee(110,"Nisha",30000);
+		Employee emp2 = new Employee(111,"Rohan",40000);
+		Employee emp3 = new Employee(112,"Ganesh",50000);
+		Employee emp4 = new Employee(113,"Anant",40000);
+	}
+	public public EmployeeDaoImpl() {
+		// TODO Auto-generated constructor stub
+		
+	}
+	@Override
+	public Employee getEmployeeById(int empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap<Integer, Employee> getAllEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee addEmployee(Employee emp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee removeEmployee(int empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

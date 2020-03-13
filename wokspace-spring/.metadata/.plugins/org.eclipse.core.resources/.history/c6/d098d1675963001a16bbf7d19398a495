@@ -1,0 +1,5 @@
+package com.psl.tx.bean;
+
+public class StudentMarksmapper {
+
+}

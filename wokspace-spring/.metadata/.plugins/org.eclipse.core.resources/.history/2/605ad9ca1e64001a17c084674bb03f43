@@ -1,0 +1,33 @@
+package com.psl.emp.service;
+
+import java.util.HashMap;
+
+import com.psl.emp.bean.Employee;
+
+public class EmployeeServiceImpl  implements EmployeeService{
+
+	@Override
+	public Employee getEmployeeById(int empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap<Integer, Employee> getAllEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee addEmployee(Employee emp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee removeEmployee(int empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

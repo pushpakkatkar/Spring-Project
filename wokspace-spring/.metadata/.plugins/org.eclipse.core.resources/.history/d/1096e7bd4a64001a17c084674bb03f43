@@ -1,0 +1,5 @@
+package com.psl.emp.service;
+
+public interface EmployeeService {
+
+}

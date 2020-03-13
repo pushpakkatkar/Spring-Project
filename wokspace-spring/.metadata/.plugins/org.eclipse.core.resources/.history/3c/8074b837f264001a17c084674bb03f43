@@ -1,0 +1,5 @@
+package com.psl.shop.bean;
+
+public class ShoppingDetails {
+
+}
